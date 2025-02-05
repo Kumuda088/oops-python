@@ -1,0 +1,13 @@
+Demonstrate a Python program that defines a class Animal with a constructor that takes name 
+and age as parameters, and a method display_info to print the name and age of the animal. 
+Create an object of the class and call the method to display the animal's details.
+
+class Animal:
+    def __init__(self,name,age):
+        self.name=name
+        self.age=age
+    def display_info(self):
+        print(self.name)
+        print(self.age)
+my_animal=Animal("Buddy",5)
+my_animal.display_info()

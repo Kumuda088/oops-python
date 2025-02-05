@@ -1,0 +1,11 @@
+Demonstrate a Python program that defines a class "MyClass" with the attributes of name and 
+age, creates an instance of the class, and uses the instance to access the attribute.
+
+
+class MyClass:
+    def __init__(self,name,age):
+        self.name=name
+        self.age=age
+person=MyClass("kumuda",19)
+print(person.name)
+print(person.age)

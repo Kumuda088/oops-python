@@ -1,0 +1,36 @@
+POLYMORPHISM:-
+
+Real-World Example in Code:
+class Animal:
+    def make_sound(self):
+        pass
+
+class Dog(Animal):
+    def make_sound(self):
+        print("Bark")
+
+class Cat(Animal):
+    def make_sound(self):
+        print("Meow")
+
+animals = [Dog(), Cat()]
+for animal in animals:
+    animal.make_sound()
+
+
+Programming Example in Code:
+class Notification:
+    def send(self):
+        pass
+
+class EmailNotification(Notification):
+    def send(self):
+        print("Sending Email")
+
+class SMSNotification(Notification):
+    def send(self):
+        print("Sending SMS")
+
+notifications = [EmailNotification(), SMSNotification()]
+for notification in notifications:
+    notification.send()

@@ -1,0 +1,10 @@
+METHOD OVERLOADING
+
+class MathOperations:
+    def add(self, a, b, c=0):
+        return a + b + c  # Handles both 2 and 3 parameter cases
+
+# Usage
+math = MathOperations()
+print(math.add(5, 10))     # Two arguments
+print(math.add(5, 10, 15)) # Three arguments

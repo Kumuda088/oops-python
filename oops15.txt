@@ -5,10 +5,10 @@ class computer:
 com1 = computer()
 com2 = computer()
 
-computer.config(com1)    #in oops this one not using
-computer.config(com2)    #in oops this one not using
-com1.config()            #this one we are using
-com2.config()            #this one we are using
+computer.config(com1)    
+computer.config(com2)    
+com1.config()            
+com2.config()            
     
 
 

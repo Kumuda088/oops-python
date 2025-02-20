@@ -1,0 +1,86 @@
+class student:
+    college_name = 'pu'
+
+    def __init__(self, name, age):
+        self.name = name  # instance variable
+        self.age = age    # instance variable
+
+    def display(self):
+        print("student name:", self.name)  # printing the instance variable
+        print("student age:", self.age)     # printing the instance variable
+        print("college name:", student.college_name)  # calling the class variable
+
+    @classmethod
+    def modify_college_name(cls, new_college_name):
+        cls.college_name = new_college_name
+
+    @staticmethod
+    def is_adult(age):
+        if age >= 18:
+            print("He is an adult")
+        else:
+            print("He is not an adult")
+
+# Creating student instances
+s1 = student("amruta", 19)
+s2 = student("kumuda", 2)
+
+# Displaying student details
+s1.display()     # it prints the student details
+s2.display()     # it prints the student details
+
+# Modifying the college name
+student.modify_college_name('presidency university')
+
+# Displaying student details after modification
+s1.display()      # it modifies the college name in the sense of the class variable
+s2.display()      # it modifies the college name in the sense of the class variable
+
+# Checking if students are adults
+student.is_adult(s1.age)
+student.is_adult(s2.age)
+
+class address:
+    def __init__(self,city,state):
+        self.city=city
+        self.state=state
+    def display(self):
+        print(self.city)
+        print(self.state)
+
+class course:
+    def __init__(self, obj,name):
+        self.obj = obj
+        self.name=name
+    def display(self):
+        self.obj.display()
+        print("course name:",self.name)
+cor1 = course(s1,'aiml')
+cor1.display()
+cor2 = course(s2,'dbms')
+cor2.display()
+
+
+output:- 
+student name: amruta
+student age: 19
+college name: pu
+student name: kumuda
+student age: 2
+college name: pu
+student name: amruta
+student age: 19
+college name: presidency university
+student name: kumuda
+student age: 2
+college name: presidency university
+He is an adult
+He is not an adult
+student name: amruta
+student age: 19
+college name: presidency university
+course name: aiml
+student name: kumuda
+student age: 2
+college name: presidency university
+course name: dbms

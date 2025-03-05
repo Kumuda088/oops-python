@@ -1,0 +1,59 @@
+Create a Python application for a simple Hotel Management System. This application should have the following features:
+1.	Class Definition: Define a Hotel class that:
+o	Has instance variables name, location, and rating.
+o	Has a class variable hotel_chain that is the same across all instances.
+2.	Methods: Implement the following methods within the Hotel class:
+o	Instance Methods:
+	get_hotel_info(): Returns information about the hotel including its name, location, rating, and hotel chain.
+o	Class Methods:
+	change_hotel_chain(new_chain): Allows changing the hotel_chain for all instances of Hotel.
+o	Static Methods:
+	is_high_rated(rating): Takes a rating as input and returns True if the rating is 4 or above, otherwise returns False.
+3.	Inner Class: Create an inner class called Room that has attributes room_number, room_type, and price. It should have a method get_room_details() to return the room details.
+4.	Data Transfer Between Classes: Define another class called Reservation. The Reservation class should:
+o	Accept a Hotel object and a Room object during initialization.
+o	Have a method get_reservation_info() that returns information about the hotel and the reserved room.
+
+
+
+
+
+class hotel:
+    hotel_chain="abc"
+    def _init_(self,name,loc,rate):
+        self.name=name
+        self.loc=loc
+        self.rate=rate
+    def get_hotel_info(self):
+        return f"name:{self.name},loc:{self.loc},rate:{self.rate},hotel_chain:{hotel.hotel_chain}"
+    @classmethod
+    def change_hotel_chain(cls,new_chain):
+        cls.hotel_chain=new_chain
+    @staticmethod
+    def is_high_rated(rate):
+        if (rate>=4):
+            print("true")
+        else:
+            print("false")
+class room:
+    def _init_(self,no,room_type,price):
+        self.no=no
+        self.room_type=room_type
+        self.price=price
+    def get_room_details(self):
+        return f"no:{self.no},room_type:{self.room_type},price:{self.price}"
+class reservation:
+    def _init_(self,hotel,room):
+        self.hotel=hotel
+        self.room=room
+    def get_reservation_info(self):
+        return f"{self.hotel.get_hotel_info()},{self.room.get_room_details()}"
+obj1=hotel("spicy kadai","rajankunte",7)
+print(obj1.get_hotel_info())
+obj1.change_hotel_chain("xyz")
+print(obj1.get_hotel_info())
+obj1.is_high_rated(obj1.rate)
+r1=room(12,"luxurious",10000)
+print(r1.get_room_details())
+re1=reservation(obj1,r1)
+print(re1.get_reservation_info())

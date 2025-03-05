@@ -1,0 +1,55 @@
+Create a Python application for a simple Student Management System. The application should include the following functionalities:
+1.	Class Definition: Define a Student class that:
+o	Has instance variables name and age.
+o	Has a class variable college_name that is shared among all instances.
+2.	Methods: Implement the following methods within the Student class:
+o	Instance Methods:
+	get_details(): Returns the details of the student (name, age, and college name).
+o	Class Methods:
+	change_college(new_college): Allows changing the college_name for all instances of Student.
+o	Static Methods:
+	is_adult(age): Takes an age as input and returns True if the age is 18 or above, otherwise returns False.
+3.	Inner Class: Create an inner class called Address that has attributes city and state. It should also have a method get_address() to return the address details.
+4.	Data Transfer Between Classes: Define another class called Course. This class should:
+o	Accept a Student object during initialization and store its details.
+o	Have a method get_student_info() that returns the details of the student in that course.
+
+
+
+
+class student:
+    clg_name=("presidency")
+    def _init_(self,name,age):
+        self.name=name
+        self.age=age
+    def get_details(self):
+        return f"name:{self.name},age:{self.age},college:{student.clg_name}"
+    @classmethod
+    def modify_clg(cls,new_clg):
+        cls.clg_name=new_clg
+    @staticmethod
+    def is_adult(age):
+        if(age>=18):
+            print("true")
+        else:
+            print("false")
+class address:
+    def _init_(self,city,state):
+        self.city=city
+        self.state=state
+    def get_address(self):
+        return f"city:{self.city},state:{self.state}"
+class course:
+    def _init_(self,student):
+        self.student=student
+    def get_student_info(self):
+        return self.student.get_details()
+obj1=student("anu",19)
+print(obj1.get_details())
+student.modify_clg("reva")
+print(obj1.get_details())
+obj1.is_adult(obj1.age)
+a1=address("banglore","karnataka")
+print(a1.get_address())
+c1=course(obj1)
+print(c1.get_student_info())

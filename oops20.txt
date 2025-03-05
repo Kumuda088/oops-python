@@ -1,0 +1,26 @@
+class car:
+    wheels=4
+    def _init_(self,brand,year):
+        self.brand=brand
+        self.year=year
+    def get_details(self):
+        return f"brand:{self.brand},year:{self.year},wheels:{car.wheels}"
+    @classmethod
+    def change_wheels(cls,new_wheels):
+        cls.wheels=new_wheels
+    @staticmethod
+    def eco_friendly_brand(brand):
+        is_eco_friendly=["honda","maruti"]
+        if brand in is_eco_friendly:
+            print("yes")
+        else:
+            print("no")
+car1=car("honda",2024)
+car2=car("etios",2017)
+print(car1.get_details())
+print(car2.get_details())
+car.change_wheels(6)
+print(car1.get_details())
+print(car2.get_details())
+car1.eco_friendly_brand(car1.brand)
+car2.eco_friendly_brand(car2.brand)
